@@ -1,6 +1,6 @@
 use crate::timing::MapTimestamp;
 
-#[derive(Debug, Eq, Clone, PartialEq)]
+#[derive(Debug, Eq, Clone, PartialEq, Copy)]
 pub enum Object {
     HitObject {
         timestamp: MapTimestamp // todo timestamps
