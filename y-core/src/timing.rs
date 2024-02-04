@@ -1,8 +1,8 @@
 use core::ops::{Add, Sub};
 
-#[derive(Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy)]
 pub struct Timestamp(pub i32);
-#[derive(Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy)]
 pub struct TimestampDifference(pub i32);
 
 pub struct TimestampConverter {
@@ -54,7 +54,7 @@ impl TimestampDifference {
 
 macro_rules! impl_timestamp {
     ($name:ident, $diff:ident) => {
-        #[derive(Clone, Copy)]
+        #[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy)]
         pub struct $name(pub Timestamp);
 
         impl $name {
@@ -75,7 +75,7 @@ macro_rules! impl_timestamp {
             }
         }
 
-        #[derive(Clone, Copy)]
+        #[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy)]
         pub struct $diff(pub TimestampDifference);
 
         impl $diff {
